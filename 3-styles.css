@@ -1,0 +1,79 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 15px;
+}
+
+.menu-open-button {
+  background-color: rgb(206, 44, 66);
+  border: 1px solid rgb(150, 40, 60);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu-open-button:hover {
+  width: 70px;
+  height: 70px;
+}
+
+[class^="menu-line"] {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 20px;
+  background-color: white;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  transition: transform 0.5s ease;
+}
+
+.menu-open {
+  display: none;
+}
+
+.menu-open:checked + .menu-open-button {
+  width: 50px;
+  height: 50px;
+}
+
+.menu-open:checked + .menu-open-button .menu-line-1 {
+  transform: rotate(-45deg) translateY(2px) translateX(-2px);
+}
+
+.menu-open:checked + .menu-open-button .menu-line-2 {
+  transform: rotate(45deg) translateY(-2px) translateX(-2px);
+}
+
+.menu-open:checked + .menu-open-button .menu-line-3 {
+  background-color: transparent;
+}
+
+.menu-item {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(206, 44, 66);
+  border: 1px solid rgb(150, 40, 60);
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+}
+
+.menu-open:checked ~ .menu-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-item:hover {
+  background-color: white;
+  color: rgb(206, 44, 66);
+}
